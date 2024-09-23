@@ -12,6 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 break;
             case 'resta':
                 $resultado = $num1 - $num2;
+            case 'multiplicacion':
+                $resultado = $num1 * $num2;
+                break;
+            case 'division':
+                if ($num2 != 0) {
+                    $resultado = $num1 / $num2;
+                }else{
+                    $resultado = "Error";
+                }
                 break;
                 default:
                 $resultado = "Operación no soportada.";
