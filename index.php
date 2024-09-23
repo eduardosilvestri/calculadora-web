@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculadora-web</title>
+</head>
+<body>
+    <div id="caja">
+        <h1>Calculadora Web</h1>
+        <form action="calculadora.php" method="POST">
+            <input type="number" name="num1" placeholder="Número 1" required>
+            <input type="number" name="num2" placeholder="Número 2" required>
+            <div>
+                <button type="submit" name="operacion" value="suma">Sumar</button>
+                <button type="submit" name="operacion" value="resta">Restar</button>
+                <button type="submit" name="operacion" value="multiplicacion">Multiplicar</button>
+                <button type="submit" name="operacion" value="division">Dividir</button>
+            </div>
+        </form>
+        <div id="resultado">
+        <?php
+        if (isset($_GET['resultado'])) {
+            echo "<h2>Resultado: " . htmlspecialchars($_GET['resultado']) . "</h2>";
+        }
+        ?>
+        </div>
+    </div>
+</body>
+</html>
